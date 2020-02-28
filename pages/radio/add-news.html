@@ -717,6 +717,10 @@
 							</style>
 							<h3 class="card-title">Добавить запись</h3>
 
+							<script> 
+								var formContent = '<p> Предзаполненная форма, если необходимо </p>';
+							</script>
+
 							<div class="card-tools">
 								<button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
 									<i class="fas fa-minus"></i></button>
@@ -735,6 +739,9 @@
 											<label class="custom-file-label" for="exampleInputFile">Выберите изображение</label>
 										</div>
 									</div>
+								</div>
+								<div class="form-group">
+									Здесь должна быть галерея
 								</div>
 								<div class="pad form-group">
 									<label for="inputText">Контент новости</label>
@@ -777,22 +784,21 @@
 <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <script src="../../dist/js/adminlte.min.js"></script>
+
+<script src="../../plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="../../dist/js/demo.js"></script>
 
 <script src="../../plugins/summernote/summernote-bs4.min.js"></script>
 <script>
 	$(function () {
-    // Summernote
-    $('.textarea').summernote({
-    	toolbar: [
-    	['style', ['bold', 'italic', 'underline', 'clear']],
-    	['fontsize', ['fontsize']],
-    	['color', ['color']],
-    	['para', ['ul', 'ol', 'paragraph']],
-    	]
-    })
-})
+		$('.textarea').summernote('editor.pasteHTML', formContent);
+	})
+</script>
+<script type="text/javascript">
+	$(document).ready(function () {
+		bsCustomFileInput.init();
+	});
 </script>
 </body>
 </html>
